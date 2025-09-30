@@ -1,5 +1,8 @@
 import flask
 
+def sum(x, y):
+    return x + y
+
 app = flask.Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def hello():
@@ -8,7 +11,7 @@ def hello():
         try:
             x = int(flask.request.form.get('x', 0))
             y = int(flask.request.form.get('y', 0))
-            result = x + y
+            sum(x, y)
         except ValueError:
             result = 'Invalid input'
     return '''
