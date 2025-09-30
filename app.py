@@ -11,7 +11,7 @@ def hello():
         try:
             x = int(flask.request.form.get('x', 0))
             y = int(flask.request.form.get('y', 0))
-            sum(x, y)
+            result = sum(x, y)
         except ValueError:
             result = 'Invalid input'
     return '''
